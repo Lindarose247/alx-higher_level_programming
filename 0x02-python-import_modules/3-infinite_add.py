@@ -1,12 +1,11 @@
 #!/usr/bin/python3
 
-if __name__ == "__main__":
-    import sys
+from sys import argv
 
-    ac = len(sys.argv) - 1
-    res = 0
+add = 0
 
-    if ac > 0:
-        for i in range(ac):
-            res += int(sys.argv[i + 1])
-    print("{:d}".format(res))
+for s in argv[1:]:
+
+    add += int(s)
+
+print("{:d}".format(add))
