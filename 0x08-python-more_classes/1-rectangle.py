@@ -1,31 +1,22 @@
 #!/usr/bin/python3
 
-"""Rectangle module.
+"""
 
-This module contains a class that defines a rectangle.
+Defines a class Rectangle
 
 """
 
-class Rectangle():
+class Rectangle:
 
-    """Defines a rectangle."""
+    """Representation of a rectangle"""
 
     def __init__(self, width=0, height=0):
 
-        """Sets the necessary attributes for the Rectangle object.
-
-
-        Args:
-
-            width (int): the width of the rectangle.
-
-            height (int): the height of the rectangle.
-
-        """
-
-        self.width = width
+        """Initializes the rectangle"""
 
         self.height = height
+
+        self.width = width
 
 
 
@@ -33,7 +24,7 @@ class Rectangle():
 
     def width(self):
 
-        """Get or set the width of the rectangle."""
+        """getter for the private instance attribute width"""
 
         return self.__width
 
@@ -43,19 +34,17 @@ class Rectangle():
 
     def width(self, value):
 
-        if type(value) is int:
+        """setter for the private instance attribute width"""
 
-            if value >= 0:
-
-                self.__width = value
-
-            else:
-
-                raise ValueError("width must be >= 0")
-
-        else:
+        if type(value) is not int:
 
             raise TypeError("width must be an integer")
+
+        if value < 0:
+
+            raise ValueError("width must be >= 0")
+
+        self.__width = value
 
 
 
@@ -63,7 +52,7 @@ class Rectangle():
 
     def height(self):
 
-        """Get or set the height of the rectangle."""
+        """getter for the private instance attribute height"""
 
         return self.__height
 
@@ -73,16 +62,16 @@ class Rectangle():
 
     def height(self, value):
 
-        if type(value) is int:
+        """setter for the private instance attribute height"""
 
-            if value >= 0:
-
-                self.__height = value
-
-            else:
-
-                raise ValueError("height must be >= 0")
-
-        else:
+        if type(value) is not int:
 
             raise TypeError("height must be an integer")
+
+        if value < 0:
+
+            raise ValueError("height must be >= 0")
+
+        self.__height = value
+
+
